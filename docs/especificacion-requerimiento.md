@@ -10,7 +10,7 @@ La plataforma de tutorías académicas es un sistema que permite gestionar las t
 - Nombre: Sharon Odette Alarcón
 - Nombre: Laura Isabella Gómez
 - Nombre: Juana Valentina Mercado
-- Nombre: Alejando Jimenez Timarán
+- Nombre: Alejando Jimenez Timana
 
 ## 3. Requerimientos Funcionales
 
@@ -149,6 +149,53 @@ El sistema elimina correctamente la inscripción del estudiante, libera nuevamen
 
 ### Ramas utilizadas
 
+                  feature/rf01-registro-tutoria
+                 /
+main → develop ─ feature/rf02-consulta-tutoria
+                 \
+                  feature/rf03-inscripcion-tutoria
+                   \
+                    feature/rf04-cancelacion-inscripcion
+                      \
+                       feature/gestion-de-versiones
+
 ### Proceso de integración
 
+ main  
+   ↓  
+develop  
+   ↓  
+feature/rf01-registro-tutoria  
+feature/rf02-consulta-tutorias  
+feature/rf03-inscripcion-tutoria  
+feature/rf04-cancelacion-inscripcion  
+feature/gestion-de-versiones
+   ↓  
+develop  
+   ↓  
+ main
+
 ### Conflictos encontrados
+
+Durante la integración sí se presentaron conflictos.
+
+- *Archivos o secciones en conflicto:* principalmente en los archivos README.md y en la sección de requerimientos dentro de docs/especificacion-requerimientos.md.
+- *Ramas involucradas:* las ramas develop y varias feature/* creadas para los requerimientos.
+- *Descripción del problema:* los nombres y la escritura de los archivos README no coincidían entre ramas, y al realizar el merge los requerimientos quedaron en desorden dentro del documento.
+- *Resolución:* el equipo decidió reorganizar manualmente las secciones de los requerimientos en el orden correcto (RF-01 a RF-04) y unificar los nombres de los archivos README para mantener consistencia. Después de resolver los conflictos, se completó el merge exitosamente.
+
+
+# Reflexión final
+
+1. ¿Qué diferencia encontraron entre trabajar directamente en `main` y trabajar mediante ramas `feature/*`?
+- El hecho de trabajar en diferentes ramas permite mayor trabajo colaborativo , el cual permite también mejor manejo de errores y nbo dañar la base de el trabajo.
+2. ¿Cuál consideran que es el propósito de la rama `develop`?
+- Crear una versión previa para evitar generar daños en la linea base y poder probar antes y verificar que no hallan errores.
+3. ¿Qué ventaja tiene que cada funcionalidad o cambio tenga su propia rama?
+- Permite llevar un control de cada función que se le implementa al trabajo y llevar el hilo de quien hace cada cosa.
+4. ¿Qué podría ocurrir en un proyecto si todos los integrantes modificaran directamente la versión estable?
+- Si todos los integrantes modificaran directamente la versión estable (main), podrían generarse conflictos, errores o cambios que afecten el funcionamiento del proyecto. Además, sería más difícil identificar quién realizó cada modificación y recuperar una versión anterior si algo sale mal. Por eso se utilizan ramas feature/* y develop, para organizar y revisar los cambios antes de incorporarlos a la versión estable
+5. ¿Cómo ayuda Markdown a mantener organizada la documentación dentro de un repositorio?
+- Markdown permite organizar la información de manera clara mediante títulos, subtítulos, listas, tablas y otros elementos de formato. Esto facilita que los integrantes del equipo puedan leer, modificar y revisar la documentación del proyecto. Además, GitHub interpreta los archivos Markdown y los muestra de forma organizada.
+6. ¿Qué responsabilidad tiene la persona encargada de integrar los cambios del equipo?
+- La persona encargada de la integración debe revisar que los cambios realizados por los integrantes estén completos y sean correctos antes de integrarlos a develop. También debe revisar los Pull Requests, verificar la consistencia del documento, coordinar la integración de las ramas feature/* y apoyar en la resolución de conflictos cuando sea necesario. Finalmente, debe coordinar la integración de develop hacia main.
