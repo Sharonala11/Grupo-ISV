@@ -33,7 +33,6 @@ La plataforma de tutorías académicas es un sistema que permite gestionar las t
 
 - Condición 1. No se permitirá programar una tutoría para una fecha anterior a la fecha actual 
 - Condición 2. La cantidad máxima de participantes deberá estar entre 1 y 10 estudiantes
-- Condición 3.
 
 #### Salidas
 
@@ -110,7 +109,6 @@ Cuando todas las condiciones se cumplen, el sistema registra la inscripción del
 
 Si alguna de las condiciones no se cumple, el sistema no registra la inscripción, no modifica los cupos disponibles y muestra un mensaje indicando la situación.
 
-=======
 ### RF-04 - [Cancelar Inscripción]
 
 #### Resumen
