@@ -5,7 +5,6 @@
 ### Descripción general del sistema
 La plataforma de tutorías académicas es un sistema que permite gestionar las tutorías ofrecidas por los profesores de la Universidad. Los profesores podrán registrar tutorías, mientras que los estudiantes podrán consultar las disponibles, inscribirse y cancelar su inscripción. El sistema centralizará esta información y controlará los cupos y las condiciones necesarias para cada operación.
 
-
 ## 2. Integrantes
 
 - Nombre: Sharon Odette Alarcón
@@ -77,25 +76,41 @@ Permite a los estudiantes consultar las tutorías académicas disponibles en una
 El sistema muestra al estudiante la lista de tutorías disponibles para la fecha indicada, con sus detalles y cupos restantes. Si no existen tutorías que coincidan con la búsqueda, se informa al estudiante mediante un mensaje claro.
 
 
-### RF-03 - [Nombre del requerimiento]
+### RF-03 - [Inscripcion tutoria]
 
 #### Resumen
+Permitir que un estudiante solicite su inscripción en una tutoría académica utilizando su código estudiantil y el identificador de la tutoría.
 
 #### Entradas
 
-| Entrada | Tipo de dato | Descripción |
+| Entrada | Tipo de dato | Descripción
 |---|---|---|
+| codigoEstudiante | String | Código que identifica al estudiante que desea inscribirse |
+| idTutoria | Integer | Identificador único de la tutoría en la que el estudiante desea inscribirse |
 
 #### Reglas o condiciones
+- El estudiante debe encontrarse activo en la Universidad.
+- La tutoría debe existir en el sistema.
+- La tutoría debe tener al menos un cupo disponible.
+- El estudiante no debe encontrarse previamente inscrito en la tutoría.
+- Si alguna de las condiciones anteriores no se cumple, la inscripción no debe realizarse.
+- Cuando la inscripción sea exitosa, se debe registrar la inscripción y actualizar la cantidad de cupos disponibles.
 
 #### Salidas
 
 | Salida | Tipo de dato | Descripción |
 |---|---|---|
+| Salida | Tipo de dato | Descripcion |
+| Mensaje | String | Mensaje que informa si la inscripción fue realizada correctamente o indica el motivo por el cual no pudo realizarse |
+| cuposDisponibles | Integer | Cantidad de cupos disponibles después de realizar una inscripción exitosa |
 
 #### Resultado esperado
 
+Cuando todas las condiciones se cumplen, el sistema registra la inscripción del estudiante en la tutoría, disminuye en uno la cantidad de cupos disponibles y muestra un mensaje de confirmación.
 
+Si alguna de las condiciones no se cumple, el sistema no registra la inscripción, no modifica los cupos disponibles y muestra un mensaje indicando la situación.
+
+=======
 ### RF-04 - [Cancelar Inscripción]
 
 #### Resumen
