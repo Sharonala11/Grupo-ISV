@@ -11,7 +11,7 @@ La plataforma de tutorías académicas es un sistema que permite gestionar las t
 - Nombre: Laura Isabella Gómez
 - Nombre: Juana Valentina Mercado
 - Nombre: Alejando Jimenez Timarán
-- 
+
 ## 3. Requerimientos Funcionales
 
 ### RF-01 - registro-tutoria
