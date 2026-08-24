@@ -80,7 +80,9 @@ Permitir que un estudiante cancele su participación en una tutoría en la que s
 #### Entradas
 
 | Entrada | Tipo de dato | Descripción |
+
 |Código estudiantil|String (Cadena de carácteres)|Identifica al estudiante que desea cancelar su participación.|
+
 |Identificador de la tutoría|String (Cadena de carácteres/Identificador)|Identifica la tutoría de la cual el estudiante desea cancelar su inscripción.|
 
 #### Reglas o condiciones
@@ -96,9 +98,13 @@ Permitir que un estudiante cancele su participación en una tutoría en la que s
 #### Salidas
 
 | Salida | Tipo de dato | Descripción |
+
 |Mensaje de confirmación|String (Cadena de carácteres/Identificador)|Informa al estudiante que la cancelación fue realizada correctamente.|
+
 |Mensaje de error|String (Cadena de carácteres/Identificador)|Informa al estudiante por qué no fue posible cancelar la inscripción.|
+
 |Actualización de cupos disponibles|Int (Números enteros)|Informa al estudiante que la cancelación fue realizada correctamente.|
+
 |Eliminación del registro de inscripción|Registro|Elimina la relación entre el estudiante y la tutoría cancelada.|
 
 #### Resultado esperado
