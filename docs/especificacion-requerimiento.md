@@ -149,15 +149,23 @@ El sistema elimina correctamente la inscripción del estudiante, libera nuevamen
 
 ### Ramas utilizadas
 
-                  feature/rf01-registro-tutoria
-                 /
-main → develop ─ feature/rf02-consulta-tutoria
-                 \
-                  feature/rf03-inscripcion-tutoria
-                   \
-                    feature/rf04-cancelacion-inscripcion
-                      \
-                       feature/gestion-de-versiones
+main
+
+↑
+develop
+
+├─ feature/rf01-registro-tutoria
+
+├─ feature/rf02-consulta-tutoria
+
+├─ feature/rf03-inscripcion-tutoria
+
+├─ feature/04-cancelacion-inscripcion
+
+├─ feature/gestion-de-versiones
+
+└─ docs/conflictos-encontrados
+
 
 ### Proceso de integración
 
@@ -179,10 +187,14 @@ develop
 
 Durante la integración sí se presentaron conflictos.
 
-- *Archivos o secciones en conflicto:* principalmente en los archivos README.md y en la sección de requerimientos dentro de docs/especificacion-requerimientos.md.
-- *Ramas involucradas:* las ramas develop y varias feature/* creadas para los requerimientos.
-- *Descripción del problema:* los nombres y la escritura de los archivos README no coincidían entre ramas, y al realizar el merge los requerimientos quedaron en desorden dentro del documento.
-- *Resolución:* el equipo decidió reorganizar manualmente las secciones de los requerimientos en el orden correcto (RF-01 a RF-04) y unificar los nombres de los archivos README para mantener consistencia. Después de resolver los conflictos, se completó el merge exitosamente.
+- **Archivos o secciones en conflicto:** `README.md`, `docs/especificacion-requerimiento.md`.
+4
+- **Ramas involucradas:** `develop` y distintas ramas `feature/*`.
+5
+- **Descripción del problema:** se presentaron conflictos por diferencias en los nombres y contenido de los archivos README. Además, se generó un conflicto de tipo **modify/delete** en `docs/especificacion-requerimiento.md`, ya que la rama `main` eliminó el archivo mientras `develop` contenía modificaciones. También se observó desorden en la organización de los requerimientos.
+6
+- **Resolución:** se unificaron los nombres de los archivos README, se reorganizaron manualmente los requerimientos en el orden correcto (RF-01 a RF-04) y se resolvió el conflicto conservando la versión de `develop` de `docs/especificacion-requerimiento.md`. Posteriormente, el merge se completó exitosamente.
+
 
 
 # Reflexión final
